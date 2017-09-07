@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./examples/simple.less"],"names":[],"mappings":"AAAA;EACE;CACD;AAED;EACE;CAAD","file":"examples/simple.css","sourcesContent":[".normal {\n  color: '#000'\n}\n\n.active {\n  font-size: 40px;\n}\n\n\n// WEBPACK FOOTER //\n// ./examples/simple.less"],"sourceRoot":""}
