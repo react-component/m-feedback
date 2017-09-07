@@ -44,26 +44,35 @@ export default class TouchFeedback extends React.Component<ITouchProps, ITouchSt
   }
 
   onMouseDown = (e) => {
-    this.triggerEvent('TouchStart', true, e);
+    // pc simulate mobile
+    if (this.props.onTouchStart) {
+      this.triggerEvent('TouchStart', true, e);
+    }
+    this.triggerEvent('MouseDown', true, e);
   }
 
   onMouseUp = (e) => {
-    this.triggerEvent('TouchEnd', false, e);
+    if (this.props.onTouchEnd) {
+      this.triggerEvent('TouchEnd', true, e);
+    }
+    this.triggerEvent('MouseUp', false, e);
+  }
+
+  onMouseLeave = (e) => {
+    this.triggerEvent('MouseLeave', false, e);
   }
 
   render() {
     const { children, disabled, activeClassName, activeStyle } = this.props;
 
-    const events = disabled ? undefined : (
-      touchSupported ? {
-        onTouchStart: this.onTouchStart,
-        onTouchEnd: this.onTouchEnd,
-        onTouchCancel: this.onTouchCancel,
-      } : {
-          onMouseDown: this.onMouseDown,
-          onMouseUp: this.onMouseUp,
-        }
-    );
+    const events = disabled ? undefined : {
+      onTouchStart: this.onTouchStart,
+      onTouchEnd: this.onTouchEnd,
+      onTouchCancel: this.onTouchCancel,
+      onMouseDown: this.onMouseDown,
+      onMouseUp: this.onMouseUp,
+      onMouseLeave: this.onMouseLeave,
+    };
 
     const child = React.Children.only(children);
 

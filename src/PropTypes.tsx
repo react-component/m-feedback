@@ -7,6 +7,7 @@ export interface ITouchProps {
   onTouchCancel?: Function;
   onMouseDown?: Function;
   onMouseUp?: Function;
+  onMouseLeave?: Function;
 }
 
 export interface ITouchState {
