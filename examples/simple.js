@@ -10464,10 +10464,20 @@ var TouchFeedback = function (_React$Component) {
             _this.triggerEvent('TouchCancel', false, e);
         };
         _this.onMouseDown = function (e) {
-            _this.triggerEvent('TouchStart', true, e);
+            // pc simulate mobile
+            if (_this.props.onTouchStart) {
+                _this.triggerEvent('TouchStart', true, e);
+            }
+            _this.triggerEvent('MouseDown', true, e);
         };
         _this.onMouseUp = function (e) {
-            _this.triggerEvent('TouchEnd', false, e);
+            if (_this.props.onTouchEnd) {
+                _this.triggerEvent('TouchEnd', true, e);
+            }
+            _this.triggerEvent('MouseUp', false, e);
+        };
+        _this.onMouseLeave = function (e) {
+            _this.triggerEvent('MouseLeave', false, e);
         };
         return _this;
     }
@@ -10501,13 +10511,13 @@ var TouchFeedback = function (_React$Component) {
                 activeClassName = _props.activeClassName,
                 activeStyle = _props.activeStyle;
 
-            var events = disabled ? undefined : touchSupported ? {
+            var events = disabled ? undefined : {
                 onTouchStart: this.onTouchStart,
                 onTouchEnd: this.onTouchEnd,
-                onTouchCancel: this.onTouchCancel
-            } : {
+                onTouchCancel: this.onTouchCancel,
                 onMouseDown: this.onMouseDown,
-                onMouseUp: this.onMouseUp
+                onMouseUp: this.onMouseUp,
+                onMouseLeave: this.onMouseLeave
             };
             var child = __WEBPACK_IMPORTED_MODULE_6_react___default.a.Children.only(children);
             if (!disabled && this.state.active) {
