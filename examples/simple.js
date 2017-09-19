@@ -10472,7 +10472,7 @@ var TouchFeedback = function (_React$Component) {
         };
         _this.onMouseUp = function (e) {
             if (_this.props.onTouchEnd) {
-                _this.triggerEvent('TouchEnd', true, e);
+                _this.triggerEvent('TouchEnd', false, e);
             }
             _this.triggerEvent('MouseUp', false, e);
         };
