@@ -53,7 +53,7 @@ export default class TouchFeedback extends React.Component<ITouchProps, ITouchSt
 
   onMouseUp = (e) => {
     if (this.props.onTouchEnd) {
-      this.triggerEvent('TouchEnd', true, e);
+      this.triggerEvent('TouchEnd', false, e);
     }
     this.triggerEvent('MouseUp', false, e);
   }
