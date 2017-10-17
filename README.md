@@ -49,7 +49,7 @@ import TouchFeedback from 'rmc-feedback';
 |-------------|------------------------|--------|------------|
 | disabled     |                     | boolean | false |
 | activeClassName | className applied to child when active | string |  |
-| activeStyle |  style applied to child when active | object | - |
+| activeStyle |  style applied to child when active (set to false to disable click feedback) | object | - |
 
 ## Test Case
 

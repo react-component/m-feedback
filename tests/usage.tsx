@@ -35,4 +35,17 @@ describe('simple', () => {
     expect(window.getComputedStyle(domEl).fontSize).to.be('12px');
     done();
   });
+
+  it('active style false', (done) => {
+    const instance = ReactDOM.render(
+      <TouchFeedback activeClassName="active" activeStyle={false}>
+        <div style={{ clolor: '#000'}} className="normal">click to acitve</div>
+      </TouchFeedback>
+      , div,
+    );
+    const domEl = ReactDOM.findDOMNode(instance);
+    TestUtils.Simulate.mouseDown(domEl);
+    expect(domEl.getAttribute('class').indexOf('active')).to.be(-1);
+    done();
+  });
 });
