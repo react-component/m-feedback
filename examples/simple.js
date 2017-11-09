@@ -10448,6 +10448,9 @@ var TouchFeedback = function (_React$Component) {
         _this.onTouchStart = function (e) {
             _this.triggerEvent('TouchStart', true, e);
         };
+        _this.onTouchMove = function (e) {
+            _this.triggerEvent('TouchMove', false, e);
+        };
         _this.onTouchEnd = function (e) {
             _this.triggerEvent('TouchEnd', false, e);
         };
@@ -10504,6 +10507,7 @@ var TouchFeedback = function (_React$Component) {
 
             var events = disabled ? undefined : {
                 onTouchStart: this.onTouchStart,
+                onTouchMove: this.onTouchMove,
                 onTouchEnd: this.onTouchEnd,
                 onTouchCancel: this.onTouchCancel,
                 onMouseDown: this.onMouseDown,
