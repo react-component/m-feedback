@@ -35,6 +35,10 @@ export default class TouchFeedback extends React.Component<ITouchProps, ITouchSt
     this.triggerEvent('TouchStart', true, e);
   }
 
+  onTouchMove = (e) => {
+    this.triggerEvent('TouchMove', false, e);
+  }
+
   onTouchEnd = (e) => {
     this.triggerEvent('TouchEnd', false, e);
   }
@@ -67,6 +71,7 @@ export default class TouchFeedback extends React.Component<ITouchProps, ITouchSt
 
     const events = disabled ? undefined : {
       onTouchStart: this.onTouchStart,
+      onTouchMove: this.onTouchMove,
       onTouchEnd: this.onTouchEnd,
       onTouchCancel: this.onTouchCancel,
       onMouseDown: this.onMouseDown,
