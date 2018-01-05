@@ -26,9 +26,11 @@ export default class TouchFeedback extends React.Component<ITouchProps, ITouchSt
     if (this.props[eventType]) {
       this.props[eventType](ev);
     }
-    this.setState({
-      active: isActive,
-    });
+    if (isActive !== this.state.active) {
+      this.setState({
+        active: isActive,
+      });
+    }
   }
 
   onTouchStart = (e) => {
