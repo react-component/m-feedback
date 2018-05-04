@@ -2,8 +2,6 @@ import React from 'react';
 import classNames from 'classnames';
 import { ITouchProps, ITouchState } from './PropTypes';
 
-const touchSupported = typeof window !== 'undefined' && 'ontouchstart' in window;
-
 export default class TouchFeedback extends React.Component<ITouchProps, ITouchState> {
   static defaultProps = {
     disabled: false,
@@ -23,8 +21,10 @@ export default class TouchFeedback extends React.Component<ITouchProps, ITouchSt
 
   triggerEvent(type, isActive, ev) {
     const eventType = `on${type}`;
-    if (this.props[eventType]) {
-      this.props[eventType](ev);
+    const { children } = this.props;
+
+    if (children.props[eventType]) {
+      children.props[eventType](ev);
     }
     if (isActive !== this.state.active) {
       this.setState({
@@ -51,16 +51,10 @@ export default class TouchFeedback extends React.Component<ITouchProps, ITouchSt
 
   onMouseDown = (e) => {
     // pc simulate mobile
-    if (this.props.onTouchStart) {
-      this.triggerEvent('TouchStart', true, e);
-    }
     this.triggerEvent('MouseDown', true, e);
   }
 
   onMouseUp = (e) => {
-    if (this.props.onTouchEnd) {
-      this.triggerEvent('TouchEnd', false, e);
-    }
     this.triggerEvent('MouseUp', false, e);
   }
 

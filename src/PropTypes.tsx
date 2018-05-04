@@ -2,12 +2,7 @@ export interface ITouchProps {
   disabled?: boolean;
   activeClassName?: string;
   activeStyle?: any;
-  onTouchStart?: Function;
-  onTouchEnd?: Function;
-  onTouchCancel?: Function;
-  onMouseDown?: Function;
-  onMouseUp?: Function;
-  onMouseLeave?: Function;
+  children?: any;
 }
 
 export interface ITouchState {
