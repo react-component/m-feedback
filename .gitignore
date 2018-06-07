@@ -26,3 +26,4 @@ coverage
 _ts2js
 es
 yarn.lock
+package-lock.json
