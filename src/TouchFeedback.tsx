@@ -1,5 +1,5 @@
-import React from 'react';
-import classNames from 'classnames';
+import * as React from 'react';
+import * as classNames from 'classnames';
 import { ITouchProps, ITouchState } from './PropTypes';
 
 export default class TouchFeedback extends React.Component<ITouchProps, ITouchState> {

@@ -52,13 +52,14 @@
     "coverage": "rc-test run coverage"
   },
   "dependencies": {
-    "babel-runtime": "6.x",
     "classnames": "^2.2.5"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.4",
     "@types/mocha": "~2.2.32",
-    "@types/react": "~16.0.2",
-    "@types/react-dom": "15.5.1",
+    "@types/react": "^16.0.0",
+    "@types/react-dom": "^16.0.0",
+    "babel-runtime": "6.x",
     "expect.js": "0.3.x",
     "pre-commit": "1.x",
     "rc-test": "~6.0.3",

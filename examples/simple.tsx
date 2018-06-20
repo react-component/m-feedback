@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 /* tslint:disable:no-console */
-import React from 'react';
-import ReactDOM from 'react-dom';
-import TouchFeedback from 'rmc-feedback';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import TouchFeedback from '../src/index';
 import './simple.less';
 
 const TouchFeedbackDemo = () => (
