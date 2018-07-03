@@ -1,7 +1,7 @@
 import expect from 'expect.js';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import TestUtils from 'react-dom/test-utils';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import * as TestUtils from 'react-dom/test-utils';
 import TouchFeedback from '../src/TouchFeedback';
 
 /* global Hammer */
@@ -22,7 +22,7 @@ describe('simple', () => {
   it('works ok', (done) => {
     const instance = ReactDOM.render(
       <TouchFeedback activeClassName="active" activeStyle={{ color: 'red' }}>
-        <div style={{ clolor: '#000'}} className="normal">click to acitve</div>
+        <div style={{ color: '#000'}} className="normal">click to acitve</div>
       </TouchFeedback>
       , div,
     );
@@ -39,7 +39,7 @@ describe('simple', () => {
   it('active style false', (done) => {
     const instance = ReactDOM.render(
       <TouchFeedback activeClassName="active" activeStyle={false}>
-        <div style={{ clolor: '#000'}} className="normal">click to acitve</div>
+        <div style={{ color: '#000'}} className="normal">click to acitve</div>
       </TouchFeedback>
       , div,
     );
