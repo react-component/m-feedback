@@ -1,4 +1,5 @@
 # rmc-feedback
+
 ---
 
 :active pseudo-class with react/preact for mobile
@@ -35,21 +36,24 @@ npm start
 ```js
 import TouchFeedback from 'rmc-feedback';
 
-<TouchFeedback activeClassName="acitve" activeStyle={{ color: 'red'}} disabled={false}>
+<TouchFeedback
+  activeClassName="acitve"
+  activeStyle={{ color: 'red' }}
+  disabled={false}
+>
   <div>click to active</div>
-</TouchFeedback>
-
+</TouchFeedback>;
 ```
 
 ## API
 
 ### props
 
-| name        | description          | type   | default    |
-|-------------|------------------------|--------|------------|
-| disabled     |                     | boolean | false |
-| activeClassName | className applied to child when active | string |  |
-| activeStyle |  style applied to child when active (set to false to disable click feedback) | object | - |
+| name            | description                                                                 | type    | default |
+| --------------- | --------------------------------------------------------------------------- | ------- | ------- |
+| disabled        |                                                                             | boolean | false   |
+| activeClassName | className applied to child when active                                      | string  |         |
+| activeStyle     | style applied to child when active (set to false to disable click feedback) | object  | -       |
 
 ## Test Case
 
@@ -69,3 +73,9 @@ open coverage/ dir
 ## License
 
 rmc-feedback is released under the MIT license.
+
+## Publish
+
+Since 2.0.1, you do not need to publish to npm on local.
+And you can release a new tag on github just as https://github.com/react-component/m-feedback/releases/tag/2.0.1.
+Then, circleci will auto publish and change the version as your tag just now.
