@@ -80,15 +80,12 @@ export default class TouchFeedback extends React.Component<ITouchProps, ITouchSt
     if (!disabled && this.state.active) {
       let { style, className } = child.props;
 
-      if (activeStyle !== false) {
-        if (activeStyle) {
-          style = {...style, ...activeStyle };
-        }
-        className = classNames(className, activeClassName);
+      if (activeStyle !== false && activeStyle) {
+        style = {...style, ...activeStyle };
       }
 
       return React.cloneElement(child, {
-        className,
+        className: classNames(className, activeClassName),
         style,
         ...events,
       });
