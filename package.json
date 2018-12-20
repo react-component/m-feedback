@@ -65,7 +65,7 @@
     "rc-test": "~6.0.3",
     "rc-tools": "6.x",
     "react": "^15.0.0",
-    "react-dom": "^15.0.0"
+    "react-dom": "^16.7.0"
   },
   "typings": "./lib/index.d.ts",
   "pre-commit": [
