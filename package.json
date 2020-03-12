@@ -63,7 +63,7 @@
     "expect.js": "0.3.x",
     "pre-commit": "1.x",
     "rc-test": "~6.0.3",
-    "rc-tools": "6.x",
+    "rc-tools": "9.x",
     "react": "^15.0.0",
     "react-dom": "^15.0.0"
   },
