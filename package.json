@@ -57,7 +57,7 @@
   },
   "devDependencies": {
     "@types/classnames": "^2.2.4",
-    "@types/mocha": "~2.2.32",
+    "@types/mocha": "~8.0.3",
     "@types/react": "^16.0.0",
     "@types/react-dom": "^16.0.0",
     "expect.js": "0.3.x",
