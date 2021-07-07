@@ -58,7 +58,7 @@
   "devDependencies": {
     "@types/classnames": "^2.2.4",
     "@types/mocha": "~2.2.32",
-    "@types/react": "^16.0.0",
+    "@types/react": "^17.0.14",
     "@types/react-dom": "^16.0.0",
     "expect.js": "0.3.x",
     "pre-commit": "1.x",
